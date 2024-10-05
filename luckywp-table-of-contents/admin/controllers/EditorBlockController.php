@@ -10,6 +10,8 @@ use luckywp\tableOfContents\core\Core;
 use luckywp\tableOfContents\core\helpers\Json;
 use luckywp\tableOfContents\plugin\PostSettings;
 
+use function is_array;
+
 class EditorBlockController extends AdminController
 {
 

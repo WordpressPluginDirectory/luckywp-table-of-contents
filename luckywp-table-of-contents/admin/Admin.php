@@ -204,7 +204,11 @@ class Admin extends BaseObject
                      'visitedLinkColor' => 'Visited Link Color',
                  ] as $var => $label) {
             if (null !== $v = $getValue($source, $var)) {
-                $rows[] = [esc_html__($label, 'luckywp-table-of-contents'), OverrideColorBadge::widget(['color' => $v]), false];
+                $rows[] = [
+                    esc_html__($label, 'luckywp-table-of-contents'),
+                    OverrideColorBadge::widget(['color' => $v]),
+                    false
+                ];
             }
         }
         if (null !== $v = $getValue($source, 'wrapNoindex')) {
