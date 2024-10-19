@@ -547,10 +547,14 @@ echo $onlyBody ? '' : '<div class="lwptocCustomize lwptocCustomize-metabox">';
                 <div class="lwptocCustomize_field_el">
                     <?php
                     $value = $model->defaultSkipHeadingText ? $defaultValue : $model->skipHeadingText;
-                    echo Html::textarea(Html::getInputName($model, 'skipHeadingText'), Core::$plugin->skipHeadingTextToMultipleString((string)$value), [
-                        'class' => 'regular-text',
-                        'rows' => 5,
-                    ]);
+                    echo Html::textarea(
+                        Html::getInputName($model, 'skipHeadingText'),
+                        esc_html(Core::$plugin->skipHeadingTextToMultipleString((string) $value)),
+                        [
+                            'class' => 'regular-text',
+                            'rows' => 5,
+                        ]
+                    );
                     echo '<div class="lwptocCustomize_field_desc">';
                     echo esc_html__('Specify headings (one per line) to be excluded from the table of contents.', 'luckywp-table-of-contents');
                     echo '<br>';

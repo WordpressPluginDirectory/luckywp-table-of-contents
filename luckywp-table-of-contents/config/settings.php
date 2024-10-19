@@ -370,10 +370,14 @@ return [
                         'label' => esc_html__('By Text', 'luckywp-table-of-contents'),
                         'widget' => function ($field) {
                             $value = Core::$plugin->settings->getValue($field['group'], $field['id'], '', false);
-                            echo Html::textarea($field['name'], Core::$plugin->skipHeadingTextToMultipleString((string)$value), [
-                                'class' => 'regular-text',
-                                'rows' => 5,
-                            ]);
+                            echo Html::textarea(
+                                $field['name'],
+                                esc_html(Core::$plugin->skipHeadingTextToMultipleString((string) $value)),
+                                [
+                                    'class' => 'regular-text',
+                                    'rows' => 5,
+                                ]
+                            );
                             echo '<p class="description">';
                             echo esc_html__('Specify headings (one per line) to be excluded from the table of contents.', 'luckywp-table-of-contents');
                             echo '<br>';
