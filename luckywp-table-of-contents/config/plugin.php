@@ -8,7 +8,7 @@ return [
         'mcePlugin',
         'shortcode',
     ],
-    'pluginsLoadedBootstrap' => [
+    'bootstrapAfterSetupTheme' => [
         'settings',
     ],
     'components' => [
