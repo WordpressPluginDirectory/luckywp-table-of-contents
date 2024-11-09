@@ -7,7 +7,6 @@ use WP_Plugin_Install_List_Table;
 
 class SettingsController extends AdminController
 {
-
     public function actionIndex()
     {
         $this->render('index');
@@ -27,10 +26,11 @@ class SettingsController extends AdminController
                 'page' => $paged,
                 'per_page' => 12,
                 'locale' => get_user_locale(),
-                'search' => 'LuckyWP',
+                'author' => 'theluckywp',
             ];
         });
 
+        $_REQUEST['tab'] = 'luckywp';
         $_POST['tab'] = 'luckywp';
         $table = new WP_Plugin_Install_List_Table();
         $table->prepare_items();
